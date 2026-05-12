@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class ex10 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int VOTO = 1;
+        int C1 = 0, C2 = 0, C3 = 0;
+        int VI = 0, TOTAL;
+        double PC1, PC2, PC3, PCI;
+
+        while (VOTO != 0) {
+
+            System.out.print("[1] Candidato 1\n[2] Candidato 2\n[3] Candidato 3\n[0] Encerrar\nSeu Voto --> ");
+            VOTO = sc.nextInt();
+
+            if (VOTO == 0){
+            continue;
+            }
+
+            if (VOTO == 1) {
+                C1++;
+            }
+            else if (VOTO == 2) {
+                C2++;
+            }
+            else if (VOTO == 3){
+                C3++;
+            }
+            else {
+                VI++;
+            }
+
+        }
+        TOTAL = C1 + C2 + C3;
+
+        PC1 = (double) C1 / TOTAL * 100;
+        PC2 = (double) C2 / TOTAL * 100;
+        PC3 = (double) C3 / TOTAL * 100;
+        PCI = (double)VI / TOTAL * 100;
+
+        System.out.println("Votos Candidato 1 --> " + C1 + " & Porcentagem --> " + PC1);
+        System.out.println("Votos Candidato 1 --> " + C2 + " & Porcentagem --> " + PC2);
+        System.out.println("Votos Candidato 1 --> " + C3 + " & Porcentagem --> " + PC3);
+        System.out.println("Votos Inválidos --> " + VI + " & Porcentagem --> " + PCI);
+    }
+}
