@@ -1,0 +1,47 @@
+package programa;
+
+import entidades.Filme;
+
+import java.util.Scanner;
+
+public class programa_filme {
+    static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String titulo, diretor, genero;
+        int anoDeLancamento;
+
+        System.out.println("Quantos filmes deseja cadastrar? ");
+        int qtdFilmes = sc.nextInt();
+        sc.nextLine();
+
+        Filme[] filmes = new Filme[qtdFilmes];
+
+        for (int cont = 0; cont < qtdFilmes; cont++) {
+
+            System.out.println("Filme " + (cont + 1) + ": ");
+            System.out.print("Título --> ");
+            titulo = sc.nextLine();
+            System.out.print("Diretor --> ");
+            diretor = sc.nextLine();
+            System.out.print("Ano de Lançamento --> ");
+            anoDeLancamento = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Gênero --> ");
+            genero = sc.nextLine();
+
+            filmes[cont] = new Filme(titulo, diretor, anoDeLancamento, genero);
+        }
+
+        for (int cont = 0; cont < qtdFilmes; cont++) {
+
+            System.out.println("-=-=-=-=-=-=-=-");
+            System.out.println("Filme " + (cont + 1) + ": ");
+            System.out.println("Título: " + filmes[cont].getTitulo());
+            System.out.println("Diretor: " + filmes[cont].getDiretor());
+            System.out.println("Gênero: " + filmes[cont].getGenero());
+            System.out.println("Ano de lançamento: " + filmes[cont].getAnoDeLancamento());
+            System.out.println(filmes[cont].verificarCategoria());
+
+        }
+    }
+}
